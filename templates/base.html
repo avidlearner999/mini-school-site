@@ -2,30 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My School Site</title>
-
-    <!-- CRITICAL for responsiveness -->
+    <title>My School</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
 <header class="header">
-    <h1 class="school-title">My School</h1>
+    <div class="header-inner">
+        <h1 class="school-title">My School</h1>
 
-    <nav class="nav">
-        <a href="{{ url_for('home') }}">Home</a>
-        <!-- More links added later -->
-    </nav>
+        <nav class="nav">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('announcements') }}">Announcements</a>
+            <a href="#">Grades</a>
+            <a href="#">Homework</a>
+        </nav>
+    </div>
 </header>
 
-<main class="container">
+<!-- HERO BANNER WITH SCHOOL IMAGE -->
+<section class="hero">
+    <img src="{{ url_for('static', filename='school.png') }}" alt="School building" class="hero-image">
+    <div class="hero-overlay">
+        <h2>Welcome to My School</h2>
+        <p>Learning • Community • Excellence</p>
+    </div>
+</section>
+
+<main class="main">
     {% block content %}{% endblock %}
 </main>
 
 <footer class="footer">
-    <p>&copy; 2026 My School</p>
+    <p>&copy; 2026 My School — All rights reserved.</p>
 </footer>
 
 </body>
