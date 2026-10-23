@@ -9,6 +9,8 @@
             <h3 class="announcement-title">{{ a.title }}</h3>
             <p class="announcement-content">{{ a.content }}</p>
             <p class="announcement-date">Posted on: {{ a.created_at }}</p>
+            <a href="/edit-announcement/{{ a.id }}">Edit</a> |
+    <a href="/delete-announcement/{{ a.id }}">Delete</a>
         </div>
     {% else %}
         <p>No announcements yet.</p>
